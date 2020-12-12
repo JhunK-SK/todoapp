@@ -1,1 +1,29 @@
-<h3>to do app</h3>
+{% extends 'tasks/base.html' %}
+
+{% block content %}
+<h3>To Do</h3>
+<div>
+    <form action="{% url 'tasks:home' %}" method="POST">
+        {% csrf_token %}
+        {{form.title}}
+        <input type="submit" name="Create Task" id="">
+    </form>
+</div>
+
+
+{% for task in tasks %}
+    <div>
+        <a href="{% url 'tasks:update_task' task.id %}">Update</a>
+        <a href="{% url 'tasks:delete_task' task.id %}">Delete</a>
+
+        {% if task.complete == True %}
+            <strike>{{ task }}</strike>
+        {% else %}
+            <span>{{ task }}</span>
+        {% endif %}
+        
+        <hr>
+    </div>
+{% endfor %}
+
+{% endblock content %}

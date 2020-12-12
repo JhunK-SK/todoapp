@@ -1,0 +1,8 @@
+<h3>Update task</h3>
+
+<form action="{% url 'tasks:update_task' task.id %}" method="POST">
+    {% csrf_token %}
+    {{ form }}
+
+    <input type="submit" name="Update Task">
+</form>
