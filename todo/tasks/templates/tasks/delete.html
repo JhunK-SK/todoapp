@@ -1,9 +1,27 @@
-<p>Are you sure you want to delete "{{task.title}}"?</p>
+{% extends 'tasks/base.html' %}
 
-<a href="{% url 'tasks:home' %}">Cancel</a>
+{% block content %}
 
-<form action="{% url 'tasks:delete_task' task.id %}" method="POST">
-    {% csrf_token %}
+<div class="container-lg">
 
-    <input type="Submit" name="delete" value="Delete">
-</form>
+    <div class="delete-update-mgs">
+        <h3>Are you sure you want to delete this tasks?</h3>
+    <p>{{task.title}}</p>
+    </div>
+
+    <form action="{% url 'tasks:delete_task' task.id %}" method="POST">
+        {% csrf_token %}
+        <span>
+            <a class="btn btn-light" href="{% url 'tasks:home' %}">Cancel</a>
+        </span>
+        <span>
+            <input class="btn btn-danger" type="Submit" name="delete" value="Delete">
+        </span>
+    
+    </form>
+</div>
+
+
+{% endblock content %}
+    
+

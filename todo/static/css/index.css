@@ -1,3 +1,43 @@
 body {
-    background-image: url(../images/widow.jpeg);
+    /* background-image: url(../images/widow.jpeg); */
+    background-color:#3b5998;
 }
+
+.page-title {
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+}
+
+.container-lg {
+    margin: 50px auto;
+    width: 740px;
+    background-color: #8b9dc3;
+    border-radius: 10px;
+    box-shadow:8px 8px 50px #626f8b;
+    padding: 10px 10px;
+}
+
+.list {
+    margin: 20px auto;
+}
+
+.cardbox {
+    background-color: #f7f7f7;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.buttons {
+    float: right;
+    font-family: 'Lato', sans-serif;
+}
+.delete-update-msg {
+    font-family: 'Lato', sans-serif;
+}
+
+
+/* .button-update {
+    float: right
+} */

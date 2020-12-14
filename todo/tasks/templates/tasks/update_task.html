@@ -1,13 +1,25 @@
 {% extends 'tasks/base.html' %}
 
 {% block content %}
-<h3>Update task</h3>
 
-<form action="{% url 'tasks:update_task' task.id %}" method="POST">
-    {% csrf_token %}
-    {{ form }}
-
-    <input type="submit" name="Update Task">
-</form>
-
+<div class="container-lg">
+    <div class="delete-update-msg">
+        <h3>Update task</h3>
+    </div>
+    
+    <form action="{% url 'tasks:update_task' task.id %}" method="POST">
+        {% csrf_token %}
+        {{ form.title }}
+        <div>
+            <p>Completed: <span>{{ form.complete }}</span></p>
+            <span>
+                <a class="btn btn-light" href="{% url 'tasks:home' %}">Cancel</a>
+            </span>
+            <span>
+                <input class="btn btn-primary button-update" type="submit" name="Update Task" value="Update">
+            </span>
+        </div>
+        
+    </form>
+</div>
 {% endblock content %}

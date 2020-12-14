@@ -14,7 +14,7 @@ def index(request):
         form = TaskForm(request.POST)
         if form.is_valid():
             form.save()
-        return redirect("/")
+        return redirect("tasks:home")
 
     context = {'tasks': tasks, 'form': form}
     return render(request, 'tasks/index.html', context)
